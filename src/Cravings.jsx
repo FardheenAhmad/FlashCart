@@ -32,7 +32,7 @@ function Cravings()
   );});
   return (
  <>
-        <h1>This is Veg Page</h1>
+        <h1>This is Cravings Page</h1>
         <div className="flex-container">
             {items}
         </div>
