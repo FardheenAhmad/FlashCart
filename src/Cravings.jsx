@@ -50,7 +50,7 @@ if (cartItems.length === 0) {
 
 return (
     <>
-        <h2>Cart Summary</h2>
+        <h2>Cart Summary in cravings</h2>
         <ul>
             {cartItems.map((item, index) => (
                 <li key={index}>
