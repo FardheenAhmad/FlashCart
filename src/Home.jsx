@@ -1,7 +1,7 @@
 function Home(){
     return(
         <>
-        <h2>        Welcome to FlashCart!
+        <h2>       Dear Customers! Welcome to FlashCart!
         </h2>
   <dt>      
 Your One-Stop Shop for Everything Fresh and Convenient!
