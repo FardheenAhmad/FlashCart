@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "./Store";
+import { addPurchase, addToCart, clearCart, removeFromCart } from "./Store";
 import { useState } from "react";
 
 function Cart() {
@@ -39,7 +39,18 @@ function Cart() {
 
     const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     const discountedPrice = totalPrice * (1 - discount / 100);
-
+    const handlePurchase=()=>{
+   
+        const purchasedate=new Date().toLocaleString();
+        
+        const purchaseDetails={
+         date:purchasedate,
+         items:[...cartItems ],
+         total:Number(totalPrice)
+        };
+        dispatch(clearCart());
+        dispatch(addPurchase(purchaseDetails));
+     }
     return (
         <>
             {cartItems.length === 0 ? (
@@ -71,7 +82,7 @@ function Cart() {
                     </div>
                     <div>
                         {discount > 0 && <p>Discount Applied: {discount}%</p>}
-                    </div>
+                    </div><button onClick={handlePurchase}>Purchase History</button>
                 </>
             )}
         </>

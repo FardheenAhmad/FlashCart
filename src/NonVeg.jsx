@@ -24,9 +24,8 @@ function NonVeg() {
                 <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">Price: ${product.price.toFixed(2)}</p>
-                    <p className="card-text">Quantity: {quantity}</p>
-                    <p className="card-text">Quantity:   <button onClick={() => handleAddToCart(product)} className="btnp" disabled={quantity <1}>+</button>{quantity}  <button onClick={() => handleRemoveFromCart(product)} className="btnm">-</button></p>
-                    <button onClick={() => handleAddToCart(product)} className="btnadd" disabled={quantity >=1}>Add to Cart</button>  </div>
+                    <p className="card-text">Quantity:   <button onClick={() => handleAddToCart(product)} className="btnp" hidden ={quantity <1}>+</button>{quantity}  <button onClick={() => handleRemoveFromCart(product)} className="btnm" hidden={quantity==0}>-</button></p>
+                    <button onClick={() => handleAddToCart(product)} className="btnadd" hidden={quantity >=1}>Add to Cart</button>  </div>
             </div>
         );
     });

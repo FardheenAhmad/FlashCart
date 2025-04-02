@@ -1,9 +1,10 @@
-GoogleLogin.jsx 
 
-import React, { useState } from 'react';
+
+// eslint-disable-next-line no-unused-vars
+import React, { useState} from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 
-function GoogleLoginComponent() {
+function GoogleLoginButton() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
@@ -34,4 +35,4 @@ function GoogleLoginComponent() {
   );
 }
 
-export default GoogleLogin;
+export default GoogleLoginButton;

@@ -24,7 +24,8 @@ body {
   background-color: #f4f4f4; 
 }
 nav {
-  background-color: #343a40; 
+  background-color: #000101a5; 
+  border-radius: 10px; 
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -32,8 +33,8 @@ nav {
 }
 
 nav a {
-  color: rgb(0, 0, 0);
-  background-color: hsl(106, 67%, 59%);
+  color: rgb(255, 253, 253);
+  background-color:rgba(11, 0, 0, 0.943);
   padding: 0.75rem 1.5rem;
   border-radius: 15px; /* Rounded corners */
   text-decoration: none; /* Remove underline */
@@ -44,9 +45,11 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #0056b3; 
+  background-color: #e0f3fa; 
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
-  transform: translateY(-2px); 
+  transform: translateY(-2px);
+  color: #000; 
+  transition: 0.9s;
 }
 
 /* Active link styling */
@@ -55,7 +58,7 @@ nav a.active {
   color: white;
 }
 
-/* Container for the page content */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -65,32 +68,11 @@ nav a.active {
   border-radius: 10px; 
 }
 
-.mt-4 {
-  margin-top: rem;
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    margin-bottom: 1rem;
-  }
-}
-
-
-
-
-.container {
-  margin: 20px;
-}
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: auto;
+  
   justify-content: center;
 }
 
@@ -98,6 +80,7 @@ nav a.active {
   width: 200px;
   border: 1px solid #d7d5d5a5;
   border-radius: 8px;
+  margin: 2px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(15, 15, 15, 0.1);
   text-align: center;
@@ -108,6 +91,7 @@ nav a.active {
   height: 150px;
   object-fit: cover;
   border-radius: 7%;
+  
 }
 
 .card-body {

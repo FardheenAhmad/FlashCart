@@ -1,4 +1,4 @@
-// Store.js
+
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const productSlice = createSlice({
@@ -24,6 +24,28 @@ const productSlice = createSlice({
             {name: "Eggs", price:10, image:"https://tse3.explicit.bing.net/th?id=OIP.7g3VODCs9OqLBvEfmx97ugHaE7&pid=Api&P=0&h=220" }
           
         ],
+    
+           
+      cravings :[
+         {name:"lays", price: 50 ,image :"https://i5.walmartimages.com/asr/a0104fff-c488-4a4e-811d-c6098646f17d_1.185c44e775ec7c73c4e6db0a2ce42b93.jpeg" },
+         {name:"chips", price: 20 ,image :"https://th.bing.com/th/id/OIP.iD7g4YhB_RZTDhhbcXvXwQHaLH?rs=1&pid=ImgDetMain" },
+         {name:"bread", price: 30 ,image :"" },
+       {name: "soda", price: 40 ,image :"" },
+         {name: "Coke", price:60 ,image :"" },
+         {name: "Pepsi" ,price: 60 ,image :"" },
+         {name: "Sprite", price: 60 ,image :"" },
+         {name: "Water", price: 20 ,image :"" },
+         {name: "Chocolate", price: 30 ,image :"" },
+         {name: "diarymilk chocolate", price: 40 ,image :"" },
+      {name:"cookies", price: 10 ,image :"" },
+      {name:"cake", price: 60 ,image :"" },
+      {name:"ice cream", price: 50 ,image :"" },
+      {name:"fries", price: 30 ,image :"" },
+      {name:"burger", price: 70 ,image :"" },
+      {name:"pizza", price: 100 ,image :"" },
+      {name:"pasta", price: 40 ,image :"" },
+      {name:"noodles", price: 30 ,image :"" } 
+        ]
     },
     reducers: {}
 });
@@ -50,15 +72,28 @@ const cartSlice = createSlice({
                 state.items = state.items.filter(i => i.name !== action.payload.name);
             }
         },
+        clearCart: (state) => {
+            state.items = [];
+        }
     }
 });
-
+const purchasedSlice = createSlice({
+    name: "purchased",
+    initialState: [],
+    reducers: {
+        addPurchase: (state, action) => {
+            state.push(action.payload);
+        }
+    }
+});
 const store = configureStore({
     reducer: {
         products: productSlice.reducer,
-        cart: cartSlice.reducer
+        cart: cartSlice.reducer,
+        purchased: purchasedSlice.reducer,
+        
     }
 });
-
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addPurchase } = purchasedSlice.actions;
+export const { addToCart, removeFromCart,clearCart } = cartSlice.actions;
 export default store;

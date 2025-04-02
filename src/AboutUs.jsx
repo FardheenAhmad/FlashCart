@@ -2,7 +2,9 @@ function AboutUs()
 {
     return(
         <>
-        <h1> Tis is aboutt us page</h1>
+         <h2>About Us 📖</h2>
+            <p>FlashCart is committed to bringing you fresh and reliable grocery options right to your doorstep, with convenience and quality in mind.</p>
+       
         </>
     )
 }
